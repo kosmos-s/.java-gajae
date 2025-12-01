@@ -140,9 +140,14 @@ public class CalculatorApp extends JFrame implements ActionListener, KeyListener
 
     private void compute(Stack<Double> nums, Stack<Character> ops){
         char op = ops.pop();
-        if(op == '^') {
+       //        if(op == '^') {
+//            double a = nums.pop();
+//            nums.push(Math.pow(a, 2));
+        if(op == '^') {  
             double a = nums.pop();
-            nums.push(Math.pow(a, 2));
+            double b = nums.pop();
+            
+            nums.push(Math.pow(b, a));
         } else {
             double b = nums.pop();
             double a = nums.pop();
@@ -174,3 +179,4 @@ public class CalculatorApp extends JFrame implements ActionListener, KeyListener
         SwingUtilities.invokeLater(CalculatorApp::new);
     }
 }
+
