@@ -19,10 +19,10 @@ Java Swing을 사용하여 만든 GUI 계산기 애플리케이션입니다.
 
 ```bash
 # 컴파일
-javac snippet/CalculatorApp.java
+javac -encoding UTF-8 -d out aaa/src/snippet/CalculatorApp.java
 
 # 실행
-java snippet.CalculatorApp
+java -cp out snippet.CalculatorApp
 ```
 
 또는 IDE(IntelliJ IDEA, Eclipse 등)에서 바로 실행 가능합니다.
@@ -62,7 +62,7 @@ java snippet.CalculatorApp
 ## 📂 프로젝트 구조
 
 ```
-snippet/
+aaa/src/snippet/
 └── CalculatorApp.java    # 메인 계산기 클래스
 ```
 
@@ -77,7 +77,8 @@ snippet/
 
 - 연속된 연산자 입력 시 오류 가능 (예: 5++3)
 - 매우 긴 소수점 결과는 과학적 표기법으로 표시됨
-- 0으로 나누기 시 Error 표시
+- 현재 실수 나눗셈에서 0으로 나누면 `Infinity`, 나머지 연산에서는 `NaN`이 표시될 수 있음
+- 자동 수식 회귀 테스트는 없으며 음수·잘못된 괄호 입력 처리는 후속 검증 대상
 
 ## 📝 라이선스
 
